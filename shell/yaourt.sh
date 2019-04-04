@@ -14,7 +14,6 @@ echo "[archlinuxcn]" >> /etc/pacman.conf
 echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
 echo "Server= https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf
 
+pacman -Sy
 # 同步并安装yaourt
 pacman -Syu yaourt
-
-# 安装fcitx和搜狗输入法

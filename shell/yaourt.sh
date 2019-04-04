@@ -13,7 +13,7 @@ repo = (
   'Server = http://mirrors.stuhome.net/archlinux/$repo/os/$arch'
 )
 sed -i "8d" /etc/pacman.d/mirrorlist
-for item in repo
+for item in ${repo[@]}
 do
   sed -i "8i$item" /etc/pacman.d/mirrorlist
 done

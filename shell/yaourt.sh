@@ -8,11 +8,18 @@ reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 
 
 # 安装AUR
-echo "[multilib]" >> /etc/pacman.conf
-echo "Include = /etc/pacman.d/mirrorlist"
-echo "[archlinuxcn]" >> /etc/pacman.conf
-echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
-echo "Server= https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf
+sed -i "93i[multilib]" /etc/pacman.conf
+sed -i "94d" /etc/pacman.conf
+sed -i "94iInclude = /etc/pacman.d/mirrorlist" /etc/pacman.conf
+sed -i "95d" /etc/pacman.conf
+
+
+sed -i "98i[archlinuxcn]" /etc/pacman.conf
+sed -i "99d" /etc/pacman.conf
+sed -i "99iSigLevel = Optional TrustAll" /etc/pacman.conf
+sed -i "100d" /etc/pacman.conf
+sed -i "104iServer= https://mirrors.ustc.edu.cn/archlinuxcn/\$arch" /etc/pacman.conf
+sed -i "105d" /etc/pacman.conf
 
 pacman -Sy
 # 同步并安装yaourt

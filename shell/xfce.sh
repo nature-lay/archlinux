@@ -12,10 +12,11 @@ pacman -S sudo
 chmod +w /etc/sudoers
 
 sed -i '80ilay ALL=(ALL) ALL' /etc/sudoers
+sed -i '81d' /etc/sudoers
 
-sed -i '83i%wheel ALL=(ALL) ALL' /etc/sudoers
+sed -i '82i%wheel ALL=(ALL) ALL' /etc/sudoers
 
-sed -i '84d' /etc/sudoers
+sed -i '83d' /etc/sudoers
 
 chmod 440 /etc/sudoers
 
